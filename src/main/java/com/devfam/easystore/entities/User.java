@@ -1,5 +1,6 @@
 package com.devfam.easystore.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,11 +9,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "user")
-@Getter @Setter @NoArgsConstructor
-public class User {
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
+public class User implements Serializable {
     @Id @GeneratedValue
     private Long Id;
     private String firstName;
@@ -21,11 +23,4 @@ public class User {
     private String mail;
     private String password;
 
-    public User(String firstName, String lastName ,String login, String mail, String password){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.login = login;
-        this.mail = mail;
-        this.password = password;
-    }
 }

@@ -1,26 +1,26 @@
 package com.devfam.easystore.entities;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "produit")
-@Getter @Setter @NoArgsConstructor
-public class Produit {
+@Data @NoArgsConstructor @AllArgsConstructor
+public class Produit implements Serializable {
     @Id @GeneratedValue
     private Long id;
+    @Column(name ="intitule",nullable = false)
     private String intitule;
     private String marque;
+    @Column(name ="prix",nullable = false)
     private Double prix;
+    private String imageName;
+    private byte[] image;
+    private boolean selected;
+    private boolean available;
+    private boolean value;
+    @ManyToOne
+    private Category category;
 
-    public Produit( String intitule, String marque, Double prix){
-        this.intitule = intitule;
-        this.marque = marque;
-        this.prix = prix;
-    }
 }

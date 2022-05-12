@@ -30,8 +30,25 @@ public class ProduitServiceImpl implements ProduitService{
     @Override
     @Transactional(readOnly = true)
     public Page<Produit> allProduit(Pageable p) {
+
         return produitRepository.findAll(p);
     }
 
+    @Override
+    public Produit upadateProduit(Long id, Produit p) {
+        Produit produit = produitRepository.findById(id).get();
+        if(produit != null){
 
+            produit.setPrix(p.getPrix());
+            produit.setIntitule(p.getIntitule());
+            produit.setMarque(p.getMarque());
+            produit.setImageName(p.getImageName());
+            produit.setImage(p.getImage());
+            produit.setCategory(p.getCategory());
+            produit.setAvailable(p.isAvailable());
+            produit.setSelected(p.isSelected());
+            produitRepository.save(produit);
+        }
+        return produit;
+    }
 }

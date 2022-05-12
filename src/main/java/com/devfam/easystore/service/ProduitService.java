@@ -18,4 +18,11 @@ public interface ProduitService {
      * @return the list of entities.
      */
     Page<Produit> allProduit(Pageable pageable);
+
+    /*
+    request to modify produit
+     */
+    Produit upadateProduit(Long id,Produit p);
+
+
 }

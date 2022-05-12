@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url:  jdbc:mysql://localhost:3306/easyStroe?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    url:  jdbc:mysql://localhost:3306/easyStore?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
     username: root
     password: root
   jpa:

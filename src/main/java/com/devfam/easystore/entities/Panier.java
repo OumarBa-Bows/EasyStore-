@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 @Entity
-public class commande implements Serializable {
+public class Panier implements Serializable {
     @Id @GeneratedValue
     private Long id;
 }
